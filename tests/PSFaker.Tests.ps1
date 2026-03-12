@@ -133,7 +133,9 @@ Describe 'Base – random primitives' {
         $orig = 'hello'
         $shuf = Invoke-FakeShuffle 'hello'
         $shuf.Length | Should -Be 5
-        ($shuf.ToCharArray() | Sort-Object) -join '' | Should -Be ($orig.ToCharArray() | Sort-Object) -join ''
+        $source = ($shuf.ToCharArray() | Sort-Object) -join '' 
+        $dest = ($orig.ToCharArray() | Sort-Object) -join ''
+        $source | Should -Be $dest
     }
 
     It 'Invoke-FakeShuffle shuffles an array' {
