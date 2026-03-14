@@ -75,12 +75,12 @@ jobs:
         id: version
         shell: pwsh
         run: |
-          $manifest = Import-PowerShellDataFile -Path './PSDotEnv.psd1' -ErrorAction SilentlyContinue
+          $manifest = Import-PowerShellDataFile -Path './PSFaker.psd1' -ErrorAction SilentlyContinue
           if ($manifest) {
             $version = $manifest.ModuleVersion
           } else {
             # Extract version from psm1 header
-            $content = Get-Content './PSDotEnv.psm1' -Raw
+            $content = Get-Content './PSFaker.psm1' -Raw
             if ($content -match '@{.*?ModuleVersion\s*=\s*[''"]([0-9.]+)[''"]') {
               $version = $matches[1]
             } else {
