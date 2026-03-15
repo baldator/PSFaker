@@ -1,8 +1,9 @@
 @{
-    ModuleVersion     = '1.0.0'
+    ModuleVersion     = '1.0.1'
     GUID              = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890'
-    Author            = 'PSFaker Contributors'
+    Author            = 'baldator'
     Description       = 'A PowerShell port of fzaninotto/Faker – generates realistic fake data for testing, seeding, and anonymisation.'
+    Copyright         = 'MIT License'
     PowerShellVersion = '5.1'
     RootModule        = 'PSFaker.psm1'
     FunctionsToExport = @(
@@ -77,5 +78,9 @@
         'Get-FakeUnique','Get-FakeOptional','Get-FakeValid',
         'Reset-FakeUnique'
     )
-    PrivateData = @{ PSData = @{ Tags = @('Faker','Testing','DataGeneration','Mock') } }
+    PrivateData = @{ PSData = @{ 
+        Tags = @('Faker','Testing','DataGeneration','Mock'),
+        ProjectUri = 'https://github.com/baldator/PSFaker'
+        } 
+    }
 }
